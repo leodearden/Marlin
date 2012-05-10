@@ -552,6 +552,15 @@ bool code_seen(char code)
     destination[LETTER##_AXIS] = current_position[LETTER##_AXIS];\
     feedrate = 0.0;\
     endstops_hit_on_purpose();\
+  }\
+  else \
+  {\
+    MSerial.println("Homing LETTER## axis is not possible. Motherboard:");\
+    MSerial.println(MOTHERBOARD_NAME);\
+    MSerial.println("Axis MAX_PIN:");\
+    MSerial.println(LETTER##_MAX_PIN);\
+    MSerial.println("Axis HOME_DIR:");\
+    MSerial.println(LETTER##_HOME_DIR);\
   }
 
 void process_commands()
@@ -638,15 +647,21 @@ void process_commands()
       
       if((home_all_axis) || (code_seen(axis_codes[X_AXIS]))) 
       {
+        MSerial.println("Homing X...");
         HOMEAXIS(X);
+        MSerial.println("done.");
       }
 
       if((home_all_axis) || (code_seen(axis_codes[Y_AXIS]))) {
-       HOMEAXIS(Y);
+        MSerial.println("Homing Y...");
+        HOMEAXIS(Y);
+        MSerial.println("done.");
       }
       
       if((home_all_axis) || (code_seen(axis_codes[Z_AXIS]))) {
+        MSerial.println("Homing Z...");
         HOMEAXIS(Z);
+        MSerial.println("done.");
       }
       
       if(code_seen(axis_codes[X_AXIS])) 

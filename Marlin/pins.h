@@ -249,6 +249,8 @@
 
 #if MOTHERBOARD == 33 || MOTHERBOARD == 34
 
+#define MOTHERBOARD_NAME "RAMPS v1.3 or later."
+
 #define X_STEP_PIN         54
 #define X_DIR_PIN          55
 #define X_ENABLE_PIN       38
@@ -281,18 +283,22 @@
 
 #if MOTHERBOARD == 33
 #define FAN_PIN            9 // (Sprinter config)
-#else
+#else // MOTHERBOARD != 33
 #define FAN_PIN            4 // IO pin. Buffer needed
-#endif
+#endif // MOTHERBOARD == 33
+
 #define PS_ON_PIN          12
 #define KILL_PIN           -1
 
 #define HEATER_0_PIN       10   // EXTRUDER 1
+
 #if MOTHERBOARD == 33
 #define HEATER_1_PIN       -1
 #else
 #define HEATER_1_PIN       9    // EXTRUDER 2 (FAN On Sprinter)
-#endif
+#endif // MOTHERBOARD == 33
+
+
 #define HEATER_2_PIN       -1   
 #define TEMP_0_PIN         13   // ANALOG NUMBERING
 #define TEMP_1_PIN         15   // ANALOG NUMBERING
@@ -371,6 +377,8 @@
 
 #else // RAMPS_V_1_1 or RAMPS_V_1_2 as default
 
+#define MOTHERBOARD_NAME "RAMPS v1.2 or earlier."
+
 #define X_STEP_PIN         26
 #define X_DIR_PIN          28
 #define X_ENABLE_PIN       24
@@ -407,13 +415,15 @@
   #define HEATER_0_PIN     10    // RAMPS 1.1
   #define HEATER_BED_PIN    8    // RAMPS 1.1
   #define FAN_PIN           9    // RAMPS 1.1
-#endif
+#endif // ifdef RAMPS_V_1_0
+
 #define HEATER_1_PIN        -1
 #define HEATER_2_PIN        -1
 #define TEMP_0_PIN          2    // MUST USE ANALOG INPUT NUMBERING NOT DIGITAL OUTPUT NUMBERING!!!!!!!!!
 #define TEMP_1_PIN          -1   
 #define TEMP_2_PIN          -1   
 #define TEMP_BED_PIN        1    // MUST USE ANALOG INPUT NUMBERING NOT DIGITAL OUTPUT NUMBERING!!!!!!!!!
+
 #endif
 
 // SPI for Max6675 Thermocouple 
