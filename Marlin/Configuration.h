@@ -137,7 +137,7 @@ const bool Z_ENDSTOPS_INVERTING = false; // set to true to invert the logic of t
 #define DISABLE_Z false
 #define DISABLE_E false // For all extruders
 
-#define INVERT_X_DIR true    // for Mendel set to false, for Orca set to true
+#define INVERT_X_DIR false    // for Mendel set to false, for Orca set to true
 #define INVERT_Y_DIR false    // for Mendel set to true, for Orca set to false
 #define INVERT_Z_DIR true     // for Mendel set to false, for Orca set to true
 #define INVERT_E0_DIR false   // for direct drive extruder v9 set to true, for geared extruder set to false
@@ -167,7 +167,7 @@ const bool Z_ENDSTOPS_INVERTING = false; // set to true to invert the logic of t
 
 // default settings 
 
-#define DEFAULT_AXIS_STEPS_PER_UNIT   {200*16/(15*5), 200*16/(15*5), 200*16/1.25, 760*1.1*3*25*30*30*30*30/(5*24.5*24.97*29.09*29.47*29)} // 200 steps/rev; 16x microstepping; 15 tooth pulleys; 5mm belt pitch.
+#define DEFAULT_AXIS_STEPS_PER_UNIT   {200*16/(15*5), 200*16/(15*5), 200*16/1.25, 760*1.1*30/(44.5)} // 200 steps/rev; 16x microstepping; 15 tooth pulleys; 5mm belt pitch.
 #define DEFAULT_MAX_FEEDRATE          {150, 150, 5, 45}    // (mm/sec)    
 #define DEFAULT_MAX_ACCELERATION      {5000,5000,100,500}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for skeinforge 40+, for older versions raise them a lot.
 
