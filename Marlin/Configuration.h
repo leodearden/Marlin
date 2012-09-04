@@ -8,7 +8,7 @@
 //User specified version info of THIS file to display in [Pronterface, etc] terminal window during startup.
 //Implementation of an idea by Prof Braino to inform user that any changes made
 //to THIS file by the user have been successfully uploaded into firmware.
-#define STRING_VERSION_CONFIG_H "2012-05-10" //Personal revision number for changes to THIS file.
+#define STRING_VERSION_CONFIG_H "2012-07-06" //Personal revision number for changes to THIS file.
 #define STRING_CONFIG_H_AUTHOR "leo@RepRapKit.com" //Who made the changes.
 
 // This determines the communication speed of the printer
@@ -167,7 +167,7 @@ const bool Z_ENDSTOPS_INVERTING = false; // set to true to invert the logic of t
 
 // default settings 
 
-#define DEFAULT_AXIS_STEPS_PER_UNIT   {200*16/(15*5), 200*16/(15*5), 200*16/1.25, 760*1.1*30/(44.5)} // 200 steps/rev; 16x microstepping; 15 tooth pulleys; 5mm belt pitch.
+#define DEFAULT_AXIS_STEPS_PER_UNIT   {200*16/(15*5), 200*16/(15*5), 200*16/1.25, 808} // 200 steps/rev; 16x microstepping; 15 tooth pulleys; 5mm belt pitch.
 #define DEFAULT_MAX_FEEDRATE          {150, 150, 5, 45}    // (mm/sec)    
 #define DEFAULT_MAX_ACCELERATION      {5000,5000,100,500}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for skeinforge 40+, for older versions raise them a lot.
 
